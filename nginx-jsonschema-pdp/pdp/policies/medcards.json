@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "required": ["method", "path", "params", "token"],
+  "properties": {
+    "method": {
+      "type": "string",
+      "const": "GET"
+    },
+    "path": {
+      "type": "string",
+      "const": "/api/data/references/medcards/items/"
+    },
+    "params": {
+      "type": "object",
+      "required": ["medcard-region"]
+    },
+    "token": {
+      "type": "object",
+      "required": ["region"],
+      "properties": {
+        "region": {
+          "const": ${context["params"]["medcard-region"]}
+        }
+      }
+    }
+  }
+}
